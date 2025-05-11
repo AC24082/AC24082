@@ -1,16 +1,24 @@
-## Hi there 👋
+% Hechos sobre experiencia en lenguajes de programación
+experto(david, java).
+experto(raul, prolog).
+experto(luis, prolog).
+experto(marta, java).
+experto(fernanda, java).
 
-<!--
-**AC24082/AC24082** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+% Hechos sobre disponibilidad de las personas
+disponible(david, manana).
+disponible(raul, manana).
+disponible(luis, manana).
+disponible(marta, tarde).
+disponible(fernanda, manana).
 
-Here are some ideas to get you started:
+% Regla para determinar si dos personas pueden tener una reunión
+pueden_reunirse(X, Y) :-
+    X \= Y,
+    experto(X, Tema),
+    experto(Y, Tema),
+    disponible(X, Tiempo),
+    disponible(Y, Tiempo).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+% Consulta ejemplo:
+% ?- pueden_reunirse(X, Y).
