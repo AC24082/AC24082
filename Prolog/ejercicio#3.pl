@@ -1,0 +1,18 @@
+experto(david, java).
+experto(raul, prolog).
+experto(luis, prolog).
+experto(marta, java).
+experto(fernanda, java).
+
+disponibilidad(david, mañana).
+disponibilidad(raul, mañana).
+disponibilidad(luis, mañana).
+disponibilidad(marta, tarde).
+disponibilidad(fernanda, mañana).
+
+pueden_tener_reunion(X, Y) :-
+    disponibilidad(X, Tiempo),
+    disponibilidad(Y, Tiempo),
+    experto(X, Tema),
+    experto(Y, Tema),
+    X \== Y.
